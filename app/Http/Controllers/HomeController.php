@@ -3,10 +3,13 @@
 namespace App\Http\Controllers;
 
 use App\Models\User;
-use Illuminate\Support\Facades\Auth;
+use App\Models\Product;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\App;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 
 class HomeController extends Controller
@@ -36,7 +39,10 @@ class HomeController extends Controller
 
     public function root()
     {
-        return view('index');
+        return view('dashboard.products.index', [
+            'products' => Product::all(),
+            'subcategories' => SubCategory::all()
+        ]);
     }
 
     /*Language Translation*/
