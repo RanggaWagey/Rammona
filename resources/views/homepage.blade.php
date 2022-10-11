@@ -57,7 +57,7 @@
                     <div class="card-body">
                         <img src="{{ asset('frontend/img/roti.jpg') }}">
                     </div>
-                    <a href="#" class="w-100 btn btn-lg btn-warning">Open Outlet</a>
+                    <a href="/food" class="w-100 btn btn-lg btn-warning">Open Outlet</a>
                 </div>
             </div>
       <div class="col">

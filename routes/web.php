@@ -70,6 +70,7 @@ Route::prefix('/products')->group(function () {
 
 
 Route::get('/home', [App\Http\Controllers\HomepageController::class, 'index'])->name('homepage');
+Route::get('/food', [App\Http\Controllers\FoodController::class, 'index'])->name('product.food');
 
 
 //  Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
