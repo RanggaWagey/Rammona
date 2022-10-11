@@ -1,6 +1,6 @@
-@extends('layouts.main_one')
 
- @section('content')
+
+ <?php $__env->startSection('content'); ?>
 <!-- Categories Section Begin -->
 <section class="categories mt-5">
             <div class="container">
@@ -14,7 +14,7 @@
                     <div class="col-lg-3">
                         <div class="product__discount__item">
                                 <div class="product__discount__item__pic set-bg"
-                                     data-setbg="{{ asset('frontend/img/product/donat.jpeg') }}">
+                                     data-setbg="<?php echo e(asset('frontend/img/product/donat.jpeg')); ?>">
                                     <div class="product__discount__percent">-20%</div>
                                         <ul class="product__item__pic__hover">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -33,7 +33,7 @@
                         <div class="col-lg-3">
                         <div class="product__discount__item">
                                 <div class="product__discount__item__pic set-bg"
-                                     data-setbg="{{ asset('frontend/img/product/bakery.jpeg') }}">
+                                     data-setbg="<?php echo e(asset('frontend/img/product/bakery.jpeg')); ?>">
                                     <div class="product__discount__percent">-20%</div>
                                         <ul class="product__item__pic__hover">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -52,7 +52,7 @@
                         <div class="col-lg-3">
                         <div class="product__discount__item">
                                 <div class="product__discount__item__pic set-bg"
-                                     data-setbg="{{ asset('frontend/img/product/tawar.jpeg') }}">
+                                     data-setbg="<?php echo e(asset('frontend/img/product/tawar.jpeg')); ?>">
                                     <div class="product__discount__percent">-30%</div>
                                         <ul class="product__item__pic__hover">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -71,7 +71,7 @@
                         <div class="col-lg-3">
                         <div class="product__discount__item">
                                 <div class="product__discount__item__pic set-bg"
-                                     data-setbg="{{ asset('frontend/img/product/roti-kuning.jpeg') }}">
+                                     data-setbg="<?php echo e(asset('frontend/img/product/roti-kuning.jpeg')); ?>">
                                     <div class="product__discount__percent">-30%</div>
                                         <ul class="product__item__pic__hover">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -90,7 +90,7 @@
                         <div class="col-lg-3">
                         <div class="product__discount__item">
                                 <div class="product__discount__item__pic set-bg"
-                                     data-setbg="{{ asset('frontend/img/product/abon.jpeg') }}">
+                                     data-setbg="<?php echo e(asset('frontend/img/product/abon.jpeg')); ?>">
                                     <div class="product__discount__percent">-35%</div>
                                         <ul class="product__item__pic__hover">
                                             <li><a href="#"><i class="fa fa-heart"></i></a></li>
@@ -142,7 +142,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/mineral.jpeg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/mineral.jpeg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -170,7 +170,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/yakin.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/yakin.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -198,7 +198,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/aqua.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/aqua.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -226,7 +226,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/drink.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/drink.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -254,7 +254,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/kopi.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/kopi.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -282,7 +282,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/dalgona.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/dalgona.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -310,7 +310,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/tea.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/tea.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -338,7 +338,7 @@
                         <div class="featured__item">
                             <div
                                 class="featured__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/drink/hot-drink.jpg') }}"
+                                data-setbg="<?php echo e(asset('frontend/img/drink/hot-drink.jpg')); ?>"
                             >
                                 <ul class="featured__item__pic__hover">
                                     <li>
@@ -374,7 +374,7 @@
                             <div class="product_details_pic">
                                 <div class="product_detailspic_item">
                                     <img class="product_detailspic_item--large"
-                                    src="{{ asset('frontend/img/drink/hot-drink.jpg') }}" alt="">
+                                    src="<?php echo e(asset('frontend/img/drink/hot-drink.jpg')); ?>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -416,7 +416,7 @@
                             <div class="product_details_pic">
                                 <div class="product_detailspic_item">
                                     <img class="product_detailspic_item--large"
-                                    src="{{ asset('frontend/img/drink/tea.jpg') }}" alt="">
+                                    src="<?php echo e(asset('frontend/img/drink/tea.jpg')); ?>" alt="">
                                 </div>
                             </div>
                         </div>
@@ -445,4 +445,5 @@
         </section>
         <!-- Featured Section End -->
 
-    @endsection
+    <?php $__env->stopSection(); ?>
+<?php echo $__env->make('layouts.main_one', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH C:\Users\Administrator\Documents\applications\dashboard_rammona\resources\views/product/food.blade.php ENDPATH**/ ?>
