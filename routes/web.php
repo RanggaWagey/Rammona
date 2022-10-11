@@ -68,4 +68,8 @@ Route::prefix('/products')->group(function () {
 });
 
 
+
+Route::get('/home', [App\Http\Controllers\HomepageController::class, 'index'])->name('homepage');
+
+
 //  Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');
