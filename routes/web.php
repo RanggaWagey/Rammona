@@ -71,6 +71,7 @@ Route::prefix('/products')->group(function () {
 
 Route::get('/home', [App\Http\Controllers\HomepageController::class, 'index'])->name('homepage');
 Route::get('/food', [App\Http\Controllers\FoodController::class, 'index'])->name('product.food');
-
+Route::get('/drink', [\App\Http\Controllers\DrinkController::class, 'index'])->name('product.drink');
+Route::get('/contact', [\App\Http\Controllers\ContactController::class, 'index'])->name('product.contact');
 
 //  Route::get('{any}', [App\Http\Controllers\HomeController::class, 'index'])->name('index');

@@ -44,9 +44,9 @@
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
         <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
-        <li class="nav-item"><a class="nav-link" href="food">FOOD</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">DRINK</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+        <li class="nav-item"><a class="nav-link" href="/food">FOOD</a></li>
+        <li class="nav-item"><a class="nav-link" href="/drink">DRINK</a></li>
+        <li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>
         </ul>
       </nav>
       <div id="mobile-menu-wrap"></div>
@@ -66,7 +66,7 @@
                 <div class="row">
                     <div class="col-lg-3">
                         <div class="header__logo">
-                            <a href="/"
+                            <a href="/home"
                                 ><img src="{{ asset('frontend/img/Rammona-Bakery.png') }}" alt=""
                             /></a>
                         </div>
@@ -75,9 +75,9 @@
                         <nav class="header__menu text-center">
                             <ul>
                             <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
-                            <li class="nav-item"><a class="nav-link" href="food">FOOD</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">DRINK</a></li>
-                            <li class="nav-item"><a class="nav-link" href="#">CONTACT</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/food">FOOD</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/drink">DRINK</a></li>
+                            <li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>
                             </ul>
                         </nav>
                     </div>
