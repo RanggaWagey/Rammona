@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 
 class FoodController extends Controller
 {
@@ -13,7 +16,10 @@ class FoodController extends Controller
      */
     public function index()
     {
-        return view('product.food');
+        return view('product.food', [
+            'products' => Product::all(),
+            'subCategories' => SubCategory::all()
+        ]);
     }
 
     /**
