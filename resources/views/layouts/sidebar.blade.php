@@ -15,7 +15,6 @@
                         <span key="t-dashboards">@lang('translation.Dashboards')</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="{{ route('root') }}">Home</a></li>
                         <li><a href="{{ route('products.index') }}">Products</a></li>
                         <li><a href="{{ route('categories.index') }}" >Categories</a></li>
                         <li><a href="{{ route('subcategories.index') }}" >SubCategories</a></li>
