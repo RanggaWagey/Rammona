@@ -171,9 +171,10 @@
             </div>
         </div>
         <div class="row featured__filter">
+            @foreach ($products as $product)
             <div class="col-lg-3 col-md-4 col-sm-6 mix Mineral_Water">
                 <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/mineral.jpeg') }}">
+                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('storage/' . $product->image) }}">
                         <ul class="featured__item__pic__hover">
                             <li>
                                 <a href="#"><i class="fa fa-heart"></i></a>
@@ -184,154 +185,14 @@
                         </ul>
                     </div>
                     <div class="featured__item__text">
-                        <h6><a href="#">Mineral Water</a></h6>
-                        <h5>$30.00</h5>
+                        <h6><a href="#">{{ $product->name }}</a></h6>
+                        <h5>Rp. {{ $product->price }}</h5>
                     </div>
                     <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
                             Produk</button></center>
                 </div>
             </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Cold_Drink">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/yakin.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Brown Sugar Boba</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Mineral_Water">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/aqua.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Mineral Water Aqua</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Hot_Drink">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/drink.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Milk Tea</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Hot_Drink">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/kopi.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Kopi Hitam</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Cold_Drink">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/dalgona.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Dalgona</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Cold_Drink">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg" data-setbg="{{ asset('frontend/img/drink/tea.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Thai Tea</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-4 col-sm-6 mix Hot_drink">
-                <div class="featured__item">
-                    <div class="featured__item__pic set-bg"
-                        data-setbg="{{ asset('frontend/img/drink/hot-drink.jpg') }}">
-                        <ul class="featured__item__pic__hover">
-                            <li>
-                                <a href="#"><i class="fa fa-heart"></i></a>
-                            </li>
-                            <li>
-                                <a href="#"><i class="fa fa-shopping-cart"></i></a>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="featured__item__text">
-                        <h6><a href="#">Coffe</a></h6>
-                        <h5>$30.00</h5>
-                    </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
     <div class="modal" id="meModal" tabindex="-1" role="dialog">

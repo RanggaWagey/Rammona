@@ -20,10 +20,10 @@ class ProductController extends Controller
      */
     public function index()
     {
-    return view( 'dashboard.products.index',[
-        'products' => Product::all(),
-        'subcategories' => SubCategory::all()
-    ]);
+        return view('dashboard.products.index', [
+            'products' => Product::all(),
+            'subcategories' => SubCategory::all()
+        ]);
     }
 
     /**
@@ -48,14 +48,14 @@ class ProductController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required','max:255',
-            'price' => 'required','max:100',
+            'name' => 'required', 'max:255',
+            'price' => 'required', 'max:100',
             'sub_category_id' => 'required',
             'image' => 'image|file|max:10240', //max 10MB
             'description' => 'required'
         ]);
 
-        if($request->file('image')) {
+        if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('product-images');
         }
 
@@ -102,9 +102,9 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        $rules =[
-            'name' => 'required','max:255',
-            'price' => 'required','max:100',
+        $rules = [
+            'name' => 'required', 'max:255',
+            'price' => 'required', 'max:100',
             'sub_category_id' => 'required',
             'image' => 'image|file|max:10240', //max 10MB
             'description' => 'required'
@@ -112,8 +112,8 @@ class ProductController extends Controller
 
         $validatedData = $request->validate($rules);
 
-        if($request->file('image')) {
-            if($request->oldImage) {
+        if ($request->file('image')) {
+            if ($request->oldImage) {
                 Storage::delete($request->oldImage);
             }
             $validatedData['image'] = $request->file('image')->store('product-images');
@@ -135,11 +135,18 @@ class ProductController extends Controller
      */
     public function destroy(Product $product)
     {
-        if($product->image) {
+        if ($product->image) {
             Storage::delete($product->image);
         }
         Product::destroy($product->id);
-        
+
         return redirect()->route('products.index')->with('success', 'Product has been deleted.');
+    }
+
+    public function viewcategory($slug)
+    {
+        $subcategory = SubCategory::where('slug', $slug)->first();
+        $products = Product::where('sub_category_id', $subcategory->id)->get();
+        return view('dashboard.products.subcategory', compact('subcategory', 'products'));
     }
 }

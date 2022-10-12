@@ -2,12 +2,17 @@
 
 use App\Models\Product;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CobaController;
+use App\Http\Controllers\FoodController;
 use App\Http\Controllers\HomeController;
+use App\Http\Controllers\DrinkController;
+use App\Http\Controllers\ContactController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\HomepageController;
 use App\Http\Controllers\SubCategoryController;
 
 /*
@@ -67,8 +72,15 @@ Route::prefix('/products')->group(function () {
     Route::put('/{product}', [ProductController::class, 'update'])->name('products.update');
 });
 
+Route::get('/categories/{subcategory:slug}', function (SubCategory $subcategory) {
+    return view('dashboard.products.subcategory', [
+        'title' => $subcategory->name,
+        'product' => $subcategory->product,
+        'subcategory' => $subcategory->name
+    ]);
+});
 
-
+Route::get('view-category/{slug}', [ProductController::class, 'viewcategory']);
 Route::get('/home', [App\Http\Controllers\HomepageController::class, 'index'])->name('homepage');
 Route::get('/food', [App\Http\Controllers\FoodController::class, 'index'])->name('product.food');
 Route::get('/drink', [\App\Http\Controllers\DrinkController::class, 'index'])->name('product.drink');

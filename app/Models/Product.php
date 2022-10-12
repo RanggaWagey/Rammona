@@ -14,12 +14,13 @@ class Product extends Model
     // protected $with = ['category'];
     protected $with = ['subcategory'];
 
-    public function scopeFilter($query, array $filters) {
+    public function scopeFilter($query, array $filters)
+    {
 
-        $query->when($filters['search'] ?? false, function($query, $search) {
-            return $query->where(function($query) use ($search) {
-        
-            $query->where('name', 'like', '%' . $search . '%');
+        $query->when($filters['search'] ?? false, function ($query, $search) {
+            return $query->where(function ($query) use ($search) {
+
+                $query->where('name', 'like', '%' . $search . '%');
             });
         });
 
@@ -29,21 +30,24 @@ class Product extends Model
             });
         });
 
-        $query->when($filters['author'] ?? false, fn($query, $author) =>
-            $query->whereHas('author', fn($query) => 
+        $query->when(
+            $filters['author'] ?? false,
+            fn ($query, $author) =>
+            $query->whereHas(
+                'author',
+                fn ($query) =>
                 $query->where('username', $author)
             )
         );
-
     }
 
-    public function user() 
-    { 
+    public function user()
+    {
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function category() 
-    { 
+    public function category()
+    {
         return $this->belongsTo(Category::class, 'category_id');
     }
 
@@ -55,6 +59,11 @@ class Product extends Model
     public function subcategory()
     {
         return $this->belongsTo(SubCategory::class, 'sub_category_id');
+    }
+    public function getRouteKeyName()
+    {
+
+        return 'slug';
     }
 
     // public function getRouteKeyName()
