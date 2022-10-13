@@ -18,7 +18,7 @@
             <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-md-4 mb-3">
                 <div class="card">
-                    <div class="position-absolute px-3 py-2 d-flex justify-content-between" style="background-color:rgba(0, 0, 0, 0.7)"><a href="" class="text-white text-decoration-none"><?php echo e($product->subcategory->name); ?></a></div>
+                    <div class="position-absolute px-3 py-2 d-flex justify-content-between" style="background-color:rgba(0, 0, 0, 0.7)"><a href="<?php echo e(url('view-category/'. $product->subcategory->slug)); ?>" class="text-white text-decoration-none"><?php echo e($product->subcategory->name); ?></a></div>
                     <?php if($product->image): ?>
                     <div style="max-height: 170px; overflow:hidden;">
                         <img src="<?php echo e(asset('storage/' . $product->image)); ?>" alt="<?php echo e($product->subcategory->name); ?>" class="img-fluid">

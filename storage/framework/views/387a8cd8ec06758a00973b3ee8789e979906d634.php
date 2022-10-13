@@ -11,11 +11,10 @@
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
-                        <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
+                        <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">05</span>
                         <span key="t-dashboards"><?php echo app('translator')->get('translation.Dashboards'); ?></span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
-                        <li><a href="<?php echo e(route('root')); ?>">Home</a></li>
                         <li><a href="<?php echo e(route('products.index')); ?>">Products</a></li>
                         <li><a href="<?php echo e(route('categories.index')); ?>" >Categories</a></li>
                         <li><a href="<?php echo e(route('subcategories.index')); ?>" >SubCategories</a></li>

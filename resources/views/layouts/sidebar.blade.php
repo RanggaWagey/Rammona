@@ -11,7 +11,7 @@
 
                 <li>
                     <a href="javascript: void(0);" class="waves-effect">
-                        <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">04</span>
+                        <i class="bx bx-home-circle"></i><span class="badge rounded-pill bg-info float-end">05</span>
                         <span key="t-dashboards">@lang('translation.Dashboards')</span>
                     </a>
                     <ul class="sub-menu" aria-expanded="false">
