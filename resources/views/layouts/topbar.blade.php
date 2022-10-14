@@ -12,12 +12,12 @@
                     </span>
                 </a>
 
-                <a href="index" class="logo logo-light">
+                <a href="/" class="logo logo-light">
                     <span class="logo-sm">
-                        <img src="{{ URL::asset('/assets/images/logo-light.svg') }}" alt="" height="22">
+                        <img src="{{ URL::asset('/assets/images/logo1.png') }}" alt="" height="50">
                     </span>
                     <span class="logo-lg">
-                        <img src="{{ URL::asset('/assets/images/logo-light.png') }}" alt="" height="19">
+                        <img src="{{ URL::asset('/assets/images/Rammona-Bakery.png') }}" alt="" height="50">
                     </span>
                 </a>
             </div>

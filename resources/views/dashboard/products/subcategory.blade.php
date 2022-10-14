@@ -12,6 +12,10 @@
 @endif
 
     <div class="container">
+<<<<<<< HEAD
+=======
+        <a href="/" class="btn btn-primary mb-3">Back</a>
+>>>>>>> 2429a0d07b0532ddeb373e7127f96e765835e911
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4 mb-3">
