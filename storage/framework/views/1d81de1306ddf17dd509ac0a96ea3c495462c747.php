@@ -13,7 +13,6 @@
 <?php endif; ?>
 
     <div class="container">
-        <a href="<?php echo e(route('products.create')); ?>" class="btn btn-primary mb-3">Add Product</a>
         <div class="row">
             <?php $__currentLoopData = $products; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $product): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
             <div class="col-md-4 mb-3">

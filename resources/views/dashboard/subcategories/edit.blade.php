@@ -14,7 +14,7 @@
     <div class="col-lg-12">
         <div class="card">
             <div class="card-body">
-                <h4 class="card-title mb-4">Edit Category</h4>
+                <h4 class="card-title mb-4">Edit Sub Category</h4>
 
                 <form action="{{ route('subcategories.update', $subcategory->id) }}" method="POST">
                     @method('PUT')
@@ -31,6 +31,20 @@
                                     <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                                 </div>
                             @enderror
+                        </div>
+                    </div>
+                      <div class="row mb-3">
+                        <label for="name" class="col-sm-3 col-form-label">Parent Category</label>
+                        <div class="col sm-9 mt-2">
+                            <select class="form-control input-md" name="category_id" id="category_id">
+                                @foreach ($categories as $category)
+                                @if(old('category_id', $subcategory->category_id) == $category->id)
+                                <option value="{{ $category->id }}" selected>{{ $category->name }}</option>
+                                @else
+                                <option value="{{ $category->id }}">{{ $category->name }}</option>
+                                @endif
+                                @endforeach
+                            </select>
                         </div>
                     </div>
                     
@@ -65,7 +79,7 @@
                     </div> --}}
 
                     <div class="row mb-3">
-                        <button type="submit" class="btn btn-primary btn-block">Edit Category</button>
+                        <button type="submit" class="btn btn-primary btn-block">Edit Sub Category</button>
                     </div>
                     
                 </form>

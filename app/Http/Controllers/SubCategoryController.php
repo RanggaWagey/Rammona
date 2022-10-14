@@ -27,7 +27,7 @@ class SubCategoryController extends Controller
      */
     public function create()
     {
-        return view('dashboard.subcategories.create',[
+        return view('dashboard.subcategories.create', [
             'categories' => Category::all()
         ]);
     }
@@ -41,8 +41,8 @@ class SubCategoryController extends Controller
     public function store(Request $request)
     {
         $validatedData = $request->validate([
-            'name' => 'required','max:255',
-            'slug' => 'required','unique:categories',
+            'name' => 'required', 'max:255',
+            'slug' => 'required', 'unique:categories',
             'category_id' => 'required'
         ]);
 
@@ -50,8 +50,6 @@ class SubCategoryController extends Controller
 
         SubCategory::create($validatedData);
         return redirect()->route('subcategories.index')->with('success', 'New sub category has been added!');
-
-        
     }
 
     /**
@@ -75,6 +73,7 @@ class SubCategoryController extends Controller
     {
         return view('dashboard.subcategories.edit', [
             'subcategory' => $subcategory,
+            'categories' => Category::all()
 
         ]);
     }
@@ -88,12 +87,13 @@ class SubCategoryController extends Controller
      */
     public function update(Request $request, SubCategory $subcategory)
     {
-        $rules =[
-            'name' => 'required','max:255',
+        $rules = [
+            'name' => 'required', 'max:255',
             'slug' => 'required',
+            'category_id' => 'required',
         ];
 
-    if($request->slug != $subcategory->slug) {
+        if ($request->slug != $subcategory->slug) {
             $rules['slug'] = 'required|unique:categories';
         }
 
@@ -117,7 +117,5 @@ class SubCategoryController extends Controller
     {
         SubCategory::destroy($subcategory->id);
         return redirect()->route('subcategories.index')->with('success', 'Sub Category has been deleted.');
-
-
     }
 }

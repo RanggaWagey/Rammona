@@ -12,7 +12,6 @@
 @endif
 
     <div class="container">
-        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add Product</a>
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4 mb-3">
