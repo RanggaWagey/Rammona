@@ -60,10 +60,6 @@ class Product extends Model
     {
         return $this->belongsTo(SubCategory::class, 'sub_category_id');
     }
-<<<<<<< HEAD
-
-=======
->>>>>>> 2429a0d07b0532ddeb373e7127f96e765835e911
 
     // public function getRouteKeyName()
     // {

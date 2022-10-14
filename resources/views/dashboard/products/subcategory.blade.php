@@ -12,14 +12,11 @@
 @endif
 
     <div class="container">
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
+
         <a href="/" class="btn btn-primary mb-3">Back</a>
->>>>>>> 2429a0d07b0532ddeb373e7127f96e765835e911
-=======
-        <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add Product</a>
->>>>>>> parent of 2429a0d (menambahkan button back)
+
+
+
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4 mb-3">
