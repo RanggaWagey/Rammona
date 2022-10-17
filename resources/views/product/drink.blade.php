@@ -23,7 +23,7 @@
                                         </ul>
                                 </div>
                                 <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
+                                <div class="card-header py-3 bg-warning">
                                     <h5><a href="#">Mineral Water</a></h5>
                                     <div class="product__item__price">Rp 5.000</div>
                                 </div>
@@ -42,7 +42,7 @@
                                         </ul>
                                 </div>
                                 <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
+                                <div class="card-header py-3 bg-warning">
                                     <h5><a href="#">Brown Sugar</a></h5>
                                     <div class="product__item__price">Rp 20.000</div>
                                 </div>
@@ -61,7 +61,7 @@
                                         </ul>
                                 </div>
                                 <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
+                                <div class="card-header py-3 bg-warning">
                                     <h5><a href="#">Brown Sugar Milk</a></h5>
                                     <div class="product__item__price">Rp 25.000</div>
                                 </div>
@@ -80,32 +80,14 @@
                                         </ul>
                                 </div>
                                 <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
+                                <div class="card-header py-3 bg-warning">
                                     <h5><a href="#">Milk Thea</a></h5>
                                     <div class="product__item__price">Rp 15.000</div>
                                 </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-lg-3">
-                        <div class="product__discount__item">
-                                <div class="product__discount__item__pic set-bg"
-                                     data-setbg="{{ asset('frontend/img/product/yakin.jpg') }}">
-                                    <div class="product__discount__percent">-30%</div>
-                                        <ul class="product__item__pic__hover">
-                                            <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                            <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                        </ul>
-                                </div>
-                                <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
-                                    <h5><a href="#">Broun Sugar</a></h5>
-                                    <div class="product__item__price">Rp 20.000</div>
-                                </div>
-                                </div>
-                            </div>
-                        </div>
+                       
                 </div>
             </div>
         </div>
