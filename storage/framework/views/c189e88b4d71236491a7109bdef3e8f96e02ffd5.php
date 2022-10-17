@@ -25,7 +25,7 @@
                                 </ul>
                             </div>
                             <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
+                                <div class="card-header py-3 bg-warning">
                                     <h5><a href="#"><?php echo e($product->name); ?></a></h5>
                                     <div class="product__item__price">Rp. <?php echo e($product->price); ?></div>
                                 </div>
