@@ -12,7 +12,7 @@
 @endif
 
 <div class="table-responsive col-lg-8">
-    <a href="{{ route('subcategories.create') }}" class="btn btn-primary mb-3">Create New Category</a>
+    <a href="{{ route('subcategories.create') }}" class="btn btn-primary mb-3">Create New Sub Category</a>
     <table class="table table-striped table-sm">
         <thead>
             <tr>
