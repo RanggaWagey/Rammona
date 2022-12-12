@@ -12,13 +12,11 @@
 @endif
 
 <div class="table-responsive col-lg-8">
-    <a href="{{ route('categories.create') }}" class="btn btn-primary mb-3">Create New Category</a>
     <table class="table table-striped table-sm">
         <thead>
             <tr>
                 <th scope="col">#</th>
                 <th scope="col">Category Name</th>
-                <th scope="col">Action</th>
             </tr>
         </thead>
         <tbody>
@@ -27,12 +25,6 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $category->name }}</td>
                 <td>
-                    <a href="{{ route('categories.edit', $category->id) }}" class="badge bg-warning"><i class="bx bxs-pencil btn btn-sm"></i></a>
-                    <form action="{{ route('categories.destroy', $category->id) }}" method="post" class="d-inline">
-                        @method('delete')
-                        @csrf
-                        <button class="badge bg-danger border-0" onclick="return confirm('Are you sure you want to delete this?')"><i class="bx bxs-trash btn btn-sm"></i></button>
-                    </form>
                 </td>
             </tr>
             @endforeach
