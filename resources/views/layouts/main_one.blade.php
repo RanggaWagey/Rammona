@@ -43,7 +43,7 @@
       
       <nav class="humberger__menu__nav mobile-menu">
         <ul>
-        <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
+        <li class="nav-item"><a class="nav-link" href="{{ route('homepage') }}">HOME</a></li>
         <li class="nav-item"><a class="nav-link" href="/food">FOOD</a></li>
         <li class="nav-item"><a class="nav-link" href="/drink">DRINK</a></li>
         <li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>
@@ -74,7 +74,7 @@
                     <div class="col-lg-6">
                         <nav class="header__menu text-center">
                             <ul>
-                            <li class="nav-item"><a class="nav-link" href="/home">HOME</a></li>
+                            <li class="nav-item"><a class="nav-link" href="{{ route('homepage') }}">HOME</a></li>
                             <li class="nav-item"><a class="nav-link" href="/food">FOOD</a></li>
                             <li class="nav-item"><a class="nav-link" href="/drink">DRINK</a></li>
                             <li class="nav-item"><a class="nav-link" href="/contact">CONTACT</a></li>
@@ -155,16 +155,17 @@
                                             new Date().getFullYear()
                                         );
                                     </script>
-                                     Rammona-Bakery
+                                     Rammon-Bakery
                                     <i
                                         class="fa fa-heart"
                                         aria-hidden="true"
                                     ></i>
-                                    {{-- by
+                                    by
                                     <a
                                         href="https://colorlib.com"
-                                        target="_blank" --}}
-                                        {{-- >IDE ASIA</a> --}}
+                                        target="_blank"
+                                        >Drt</a
+                                    >
                                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                                 </p>
                             </div>

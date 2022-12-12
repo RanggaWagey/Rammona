@@ -18,7 +18,7 @@
                         <li><a href="{{ route('products.index') }}">Products</a></li>
                         <li><a href="{{ route('categories.index') }}" >Categories</a></li>
                         <li><a href="{{ route('subcategories.index') }}" >SubCategories</a></li>
-                        <li><a href="#">Promo</a></li>
+                        <li><a href="{{ route('promos.index') }}">Promo</a></li>
                         <li><a href="{{ route('coba') }}">Users</a></li>
                     </ul>
                 </li>

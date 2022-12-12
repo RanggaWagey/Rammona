@@ -3,6 +3,113 @@
 @section('content')
 <!-- Categories Section Begin -->
 <section class="categories mt-5">
+    {{-- <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="section-title">
+                    <h2>SALE OF</h2>
+                </div>
+                <br>
+                <div class="categories__slider owl-carousel">
+                    <div class="col-lg-3">
+                        <div class="product__discount__item">
+                            <div class="product__discount__item__pic set-bg"
+                                data-setbg="{{ asset('frontend/img/product/donat.jpeg') }}">
+                                <div class="product__discount__percent">-20%</div>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <div class="card-header py-3 bg-transparant">
+                                    <h5><a href="#">Donat</a></h5>
+                                    <div class="product__item__price">Rp 18.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="product__discount__item">
+                            <div class="product__discount__item__pic set-bg"
+                                data-setbg="{{ asset('frontend/img/product/bakery.jpeg') }}">
+                                <div class="product__discount__percent">-20%</div>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <div class="card-header py-3 bg-transparant">
+                                    <h5><a href="#">bagelen</a></h5>
+                                    <div class="product__item__price">Rp 18.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="product__discount__item">
+                            <div class="product__discount__item__pic set-bg"
+                                data-setbg="{{ asset('frontend/img/product/tawar.jpeg') }}">
+                                <div class="product__discount__percent">-30%</div>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <div class="card-header py-3 bg-transparant">
+                                    <h5><a href="#">Roti Tawar</a></h5>
+                                    <div class="product__item__price">Rp 18.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="product__discount__item">
+                            <div class="product__discount__item__pic set-bg"
+                                data-setbg="{{ asset('frontend/img/product/roti-kuning.jpeg') }}">
+                                <div class="product__discount__percent">-30%</div>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <div class="card-header py-3 bg-transparant">
+                                    <h5><a href="#">Roti Sisir</a></h5>
+                                    <div class="product__item__price">Rp 18.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-3">
+                        <div class="product__discount__item">
+                            <div class="product__discount__item__pic set-bg"
+                                data-setbg="{{ asset('frontend/img/product/abon.jpeg') }}">
+                                <div class="product__discount__percent">-35%</div>
+                                <ul class="product__item__pic__hover">
+                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
+                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
+                                </ul>
+                            </div>
+                            <div class="product__discount__item__text">
+                                <div class="card-header py-3 bg-transparant">
+                                    <h5><a href="#">Abon</a></h5>
+                                    <div class="product__item__price">Rp 18.000</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> --}}
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -11,7 +118,7 @@
                 </div>
                 <br>
                 <div class="categories__slider owl-carousel">
-                   @foreach( $promos as $promo)
+                    @foreach( $promos as $promo)
                        <?php
                             $discount = $promo->price * $promo->discount / 100
                         ?>
@@ -39,8 +146,9 @@
                 </div>
             </div>
         </div>
+    </div>
 </section>
-<!-- Categories Section Begin -->
+<!-- Categories Section End -->
 
 <!-- Featured Section Begin -->
 <section class="featured spad">
@@ -52,10 +160,13 @@
                 </div>
                 <div class="featured__controls">
                     <ul>
-                        <li><a href="{{ route('product.drink') }}">All</a></li>
-                        @foreach($subCategori as $subcat)
-                        <li><a href="{{ url('drink-category/'. $subcat->slug) }}">{{ $subcat->name }}</a></li>
+                        
+                       
+                       <li><a href="{{ route('product.food') }}">All</a></li>
+                        @foreach($subcategory as $subcat)
+                        <li><a href="{{ url('food-category/'. $subcat->slug) }}">{{ $subcat->name }}</a></li>
                         @endforeach
+                    
                         {{-- <li class="active" data-filter="*">All</li>
                         <li data-filter=".Mineral_Water">Mineral Water</li>
                         <li data-filter=".Cold_Drink">Cold Drink</li>

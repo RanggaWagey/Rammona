@@ -20,21 +20,21 @@ class Category extends Model
 
     ];
     public function sluggable(): array
-        {
-            return [
-                'slug' => [
-                    'source' => 'name'
-                ]
-            ];
-        }
+    {
+        return [
+            'slug' => [
+                'source' => 'name'
+            ]
+        ];
+    }
 
-        public function products() 
-        { 
-            return $this->hasMany(Product::class);
-        }
+    public function products()
+    {
+        return $this->hasManyThrough(Product::class, Subcategory::class);
+    }
 
-        public function subcategory()
-        {
-            return $this->hasMany(Subcategory::class);
-        }
+    public function subcategory()
+    {
+        return $this->hasMany(Subcategory::class);
+    }
 }

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\SubCategory;
 use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class SubCategoryController extends Controller
 {
@@ -40,11 +41,18 @@ class SubCategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $validatedData = $request->validate([
-            'name' => 'required', 'max:255',
-            'slug' => 'required', 'unique:categories',
-            'category_id' => 'required'
-        ]);
+        $validatedData = $request->validate(
+            [
+                'name' => 'required', 'max:255',
+                'slug' => 'required', 'unique:categories',
+                'category_id' => 'required'
+            ],
+            [
+                'category_id.required' => 'The Parent Category cannot be empty',
+            ]
+        );
+
+
 
         // $validatedData['user_id'] = auth()->user()->id;
 
@@ -60,6 +68,7 @@ class SubCategoryController extends Controller
      */
     public function show(SubCategory $subCategory)
     {
+
         //
     }
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Promo;
 use App\Models\Product;
+use App\Models\Category;
 use App\Models\SubCategory;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -16,9 +18,20 @@ class FoodController extends Controller
      */
     public function index()
     {
+        // $subcategory = SubCategory::where('category_id', 1)->get();
+        // $category = Category::find(1);
         return view('product.food', [
-            'products' => Product::all(),
-            'subCategories' => SubCategory::all()
+            // 'products' => Product::all(),
+            'products' => Product::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 1);
+            })->get(),
+            'subCategori' => SubCategory::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 1);
+            })->get(),
+            'promos' => Product::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 1);
+            })->whereNotNUll('discount')->get(),
+            // 'category' => $category
         ]);
     }
 
@@ -86,5 +99,23 @@ class FoodController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function viewcategoryfood($slug)
+    {
+        $category = Category::find(1);
+        $subCategori = SubCategory::where('slug', $slug)->first();
+        // $products = Product::whereHas('sub_category_id', $subCategori->id)->get();
+        $products = Product::whereHas('category', function ($categ) {
+            $categ->where('categories.id', 1);
+        })->where('sub_category_id', $subCategori->id)->get();
+        return view('product.foodcategory', [
+            'subcategory' => SubCategory::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 1);
+            })->get(),
+            'promos' => Product::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 1);
+            })->whereNotNUll('discount')->get(),
+        ], compact('subCategori', 'products'));
     }
 }

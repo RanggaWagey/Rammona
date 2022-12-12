@@ -3,16 +3,16 @@
 @section('content')
 
 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-    <h1 class="h2">Edit product</h1>
+    <h1 class="h2">Edit promo</h1>
 </div>
 
 <div class="col-lg-8">
-    <form action="{{ route('products.update', $product->id) }}" method="post" class="mb-5" enctype="multipart/form-data">
+    <form action="{{ route('promos.update', $promo->id) }}" method="post" class="mb-5" enctype="multipart/form-data">
         @method('put')
         @csrf
         <div class="mb-3">
             <label for="name" class="form-label">Name</label>
-            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $product->name) }}" required>
+            <input type="text" class="form-control @error('name') is-invalid @enderror" id="name" name="name" value="{{ old('name', $promo->name) }}" readonly>
             @error('name')
                 <div class="invalid-feedback">
                     {{ $message }}
@@ -21,14 +21,23 @@
         </div>
         <div class="mb-3">
             <label for="price" class="form-label">Price</label>
-            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price', $product->price) }}" required>
+            <input type="number" class="form-control @error('price') is-invalid @enderror" id="price" name="price" value="{{ old('price', $promo->price) }}" readonly>
             @error('price')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div> 
             @enderror
         </div>
-        <div class="mb-3">
+         <div class="mb-3">
+            <label for="subcategory" class="form-label">Category</label>
+            <input type="text" class="form-control @error('subcategory') is-invalid @enderror" id="subcategory" name="subcategory" value="{{ old('subcategory', $promo->subcategory->name) }}" readonly>
+            @error('price')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div> 
+            @enderror
+        </div>
+        {{-- <div class="mb-3">
             <label for="subcategory" class="form-label">Category</label>
             <select class="form-select" name="sub_category_id">
                 @foreach($subcategories as $subcategory)
@@ -39,7 +48,7 @@
                     @endif
                 @endforeach
             </select>
-        </div>
+        </div> --}}
         {{-- <div class="mb-3">
             <label for="category" class="form-label">Category</label>
             <select class="form-select" name="category_id">
@@ -55,24 +64,24 @@
 
         <div class="mb-3">
             <label for="image" class="form-label">product Image</label>
-            <input type="hidden" name="oldImage" value="{{ $product->image }}">
-            @if($product->image)
-                <img src="{{ asset('storage/' . $product->image) }}" class="img-fluid mb-3 col-sm-5 d-block" id="preview">
+            <input type="hidden" name="oldImage" value="{{ $promo->image }}">
+            @if($promo->image)
+                <img src="{{ asset('storage/' . $promo->image) }}" class="img-fluid mb-3 col-sm-5 d-block" id="preview">
             @else
                 <img class="img-fluid mb-3 col-sm-5 d-block" id="preview">
             @endif
             
-            <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage(event)">
+            {{-- <input class="form-control @error('image') is-invalid @enderror" type="file" id="image" name="image" onchange="previewImage(event)">
             @error('image')
                 <div class="invalid-feedback">
                     {{ $message }}
                 </div>
-            @enderror
+            @enderror --}}
         </div>
 
         <div class="mb-3">
             <label for="description" class="form-label">Description</label>
-            <input id="description" type="text" name="description" value="{{ old('description', $product->description) }}">
+            <input id="description" type="text" name="description" value="{{ old('description', $promo->description) }}" readonly>
             <trix-editor input="description"></trix-editor>
             @error('description')
             <p class="text-danger">
@@ -82,7 +91,7 @@
         </div>
         <div class="mb-3">
             <label for="discount" class="form-label">Discount</label>
-            <input type="number" class="form-control @error('discount') is-invalid @enderror" id="discount" name="discount" value="{{ old('discount', $product->discount) }}" readonly>
+            <input type="number" class="form-control @error('discount') is-invalid @enderror" id="discount" name="discount" value="{{ old('discount', $promo->discount) }}">
             @error('discount')
                 <div class="invalid-feedback">
                     {{ $message }}

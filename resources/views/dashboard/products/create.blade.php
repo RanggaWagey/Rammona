@@ -28,10 +28,10 @@
             @enderror
         </div>
         <div class="mb-3">
-            <label for="subcategory" class="form-label">Category</label>
+            <label for="sub_category_id" class="form-label">Category</label>
             <select class="form-select" name="sub_category_id">
                 @foreach($subcategories as $subcategory)
-                    @if( old('category_id') == $subcategory->id)
+                    @if( old('sub_category_id') == $subcategory->id)
                     <option value="{{ $subcategory->id }}" selected>{{ $subcategory->name }}</option>
                     @else
                     <option value="{{ $subcategory->id }}" >{{ $subcategory->name }}</option>
@@ -57,6 +57,15 @@
             <p class="text-danger">
                 {{ $message }}
             </p>
+            @enderror
+        </div>
+        <div class="mb-3">
+            <label for="discount" class="form-label">Discount</label>
+            <input type="number" class="form-control @error('discount') is-invalid @enderror" id="discount" name="discount" value="{{ old('discount') }}">
+            @error('price')
+                <div class="invalid-feedback">
+                    {{ $message }}
+                </div> 
             @enderror
         </div>
 

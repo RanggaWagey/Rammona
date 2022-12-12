@@ -20,6 +20,7 @@ class ProductController extends Controller
      */
     public function index()
     {
+
         return view('dashboard.products.index', [
             'products' => Product::all(),
             'subcategories' => SubCategory::all()
@@ -52,8 +53,10 @@ class ProductController extends Controller
             'price' => 'required', 'max:100',
             'sub_category_id' => 'required',
             'image' => 'image|file|max:10240', //max 10MB
-            'description' => 'required'
+            'description' => 'required',
+            'discount' => 'max:3'
         ]);
+
 
         if ($request->file('image')) {
             $validatedData['image'] = $request->file('image')->store('product-images');
@@ -107,7 +110,8 @@ class ProductController extends Controller
             'price' => 'required', 'max:100',
             'sub_category_id' => 'required',
             'image' => 'image|file|max:10240', //max 10MB
-            'description' => 'required'
+            'description' => 'required',
+            'discount' => 'max:3'
         ];
 
         $validatedData = $request->validate($rules);

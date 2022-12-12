@@ -13,7 +13,7 @@
 
     <div class="container">
 
-        <a href="/" class="btn btn-primary mb-3">Back</a>
+        <a href="/dashboard" class="btn btn-primary mb-3">Back</a>
 
 
 

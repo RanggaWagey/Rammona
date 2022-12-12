@@ -2,6 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
+use App\Models\Category;
+use App\Models\SubCategory;
 use Illuminate\Http\Request;
 
 class DrinkController extends Controller
@@ -13,7 +16,17 @@ class DrinkController extends Controller
      */
     public function index()
     {
-        return view('product.drink');
+        return view('product.drink', [
+            'products' => Product::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 2);
+            })->get(),
+            'subCategori' => SubCategory::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 2);
+            })->get(),
+            'promos' => Product::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 2);
+            })->whereNotNUll('discount')->get()
+        ]);
     }
 
     /**
@@ -80,5 +93,23 @@ class DrinkController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function viewcategorydrink($slug)
+    {
+        $category = Category::find(1);
+        $subCategori = SubCategory::where('slug', $slug)->first();
+        // $products = Product::whereHas('sub_category_id', $subCategori->id)->get();
+        $products = Product::whereHas('category', function ($categ) {
+            $categ->where('categories.id', 2);
+        })->where('sub_category_id', $subCategori->id)->get();
+        return view('product.foodcategory', [
+            'subcategory' => SubCategory::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 2);
+            })->get(),
+            'promos' => Product::whereHas('category', function ($categ) {
+                $categ->where('categories.id', 2);
+            })->whereNotNUll('discount')->get(),
+        ], compact('subCategori', 'products'));
     }
 }

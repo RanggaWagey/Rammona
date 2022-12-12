@@ -2,17 +2,21 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Znck\Eloquent\Traits\BelongsToThrough;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 
 class Product extends Model
 {
     use HasFactory;
+    use BelongsToThrough;
 
     protected $guarded = ['id']; //apa yang tidak boleh diisi
     // protected $with = ['category'];
     protected $with = ['subcategory'];
+
+
 
     public function scopeFilter($query, array $filters)
     {
@@ -48,7 +52,7 @@ class Product extends Model
 
     public function category()
     {
-        return $this->belongsTo(Category::class, 'category_id');
+        return $this->belongsToThrough(Category::class, SubCategory::class);
     }
 
     public function cart()
@@ -59,6 +63,10 @@ class Product extends Model
     public function subcategory()
     {
         return $this->belongsTo(SubCategory::class, 'sub_category_id');
+    }
+    public function promo()
+    {
+        return $this->belongsTo(Promo::class, 'promo_id');
     }
 
     // public function getRouteKeyName()

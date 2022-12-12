@@ -3,113 +3,6 @@
 @section('content')
 <!-- Categories Section Begin -->
 <section class="categories mt-5">
-    {{-- <div class="container">
-        <div class="row">
-            <div class="col-lg-12">
-                <div class="section-title">
-                    <h2>SALE OF</h2>
-                </div>
-                <br>
-                <div class="categories__slider owl-carousel">
-                    <div class="col-lg-3">
-                        <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/product/donat.jpeg') }}">
-                                <div class="product__discount__percent">-20%</div>
-                                <ul class="product__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
-                                    <h5><a href="#">Donat</a></h5>
-                                    <div class="product__item__price">Rp 18.000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/product/bakery.jpeg') }}">
-                                <div class="product__discount__percent">-20%</div>
-                                <ul class="product__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
-                                    <h5><a href="#">bagelen</a></h5>
-                                    <div class="product__item__price">Rp 18.000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/product/tawar.jpeg') }}">
-                                <div class="product__discount__percent">-30%</div>
-                                <ul class="product__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
-                                    <h5><a href="#">Roti Tawar</a></h5>
-                                    <div class="product__item__price">Rp 18.000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/product/roti-kuning.jpeg') }}">
-                                <div class="product__discount__percent">-30%</div>
-                                <ul class="product__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
-                                    <h5><a href="#">Roti Sisir</a></h5>
-                                    <div class="product__item__price">Rp 18.000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3">
-                        <div class="product__discount__item">
-                            <div class="product__discount__item__pic set-bg"
-                                data-setbg="{{ asset('frontend/img/product/abon.jpeg') }}">
-                                <div class="product__discount__percent">-35%</div>
-                                <ul class="product__item__pic__hover">
-                                    <li><a href="#"><i class="fa fa-heart"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-retweet"></i></a></li>
-                                    <li><a href="#"><i class="fa fa-shopping-cart"></i></a></li>
-                                </ul>
-                            </div>
-                            <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-transparant">
-                                    <h5><a href="#">Abon</a></h5>
-                                    <div class="product__item__price">Rp 18.000</div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> --}}
     <div class="container">
         <div class="row">
             <div class="col-lg-12">
@@ -118,12 +11,15 @@
                 </div>
                 <br>
                 <div class="categories__slider owl-carousel">
-                    @foreach( $products as $product)
+                    @foreach( $promos as $promo)
+                       <?php
+                            $discount = $promo->price * $promo->discount / 100
+                        ?>
                     <div class="col-lg-3">
                         <div class="product__discount__item">
                             <div class="product__discount__item__pic set-bg"
-                                data-setbg="{{ asset('storage/' . $product->image) }}">
-                                <div class="product__discount__percent">-20%</div>
+                                data-setbg="{{ asset('storage/' . $promo->image) }}">
+                                <div class="product__discount__percent">-{{ $promo->discount }}%</div>
                                 <ul class="product__item__pic__hover">
                                     <li><a href="#"><i class="fa fa-heart"></i></a></li>
                                     <li><a href="#"><i class="fa fa-retweet"></i></a></li>
@@ -131,9 +27,10 @@
                                 </ul>
                             </div>
                             <div class="product__discount__item__text">
-                                <div class="card-header py-3 bg-warning">
-                                    <h5><a href="#">{{ $product->name }}</a></h5>
-                                    <div class="product__item__price">Rp. {{ $product->price }}</div>
+                                <div class="card-header py-3 bg-transparant">
+                                    <h5><a href="#">{{ $promo->name }}</a></h5>
+                                    <div class="product__item__price" style="text-decoration: line-through">Rp. {{ $promo->price }}</div>
+                                    <div class="product__item__price">Rp. {{ $promo->price - $discount }}</div>
                                 </div>
                             </div>
                         </div>
@@ -156,15 +53,10 @@
                 </div>
                 <div class="featured__controls">
                     <ul>
-                        <li class="active" data-filter="*">All</li>
-                        <li data-filter=".Mineral_Water">Mineral Water</li>
-                        <li data-filter=".Cold_Drink">Cold Drink</li>
-                        <li data-filter=".Hot_Drink">Hot drink</li>
-                        <!-- <li data-filter=".Roti_Manis">Roti Manis</li>
-                                <li data-filter=".Bagelen">Bagelen</li>
-                                <li data-filter=".Bolu">Bolu</li>
-                                <li data-filter=".Donat">Donat</li>
-                                <li data-filter=".Pastry">Pastry</li> -->
+                        <li><a href="{{ route('product.food') }}">All</a></li>
+                        @foreach($subCategori as $subcat)
+                        <li><a href="{{ url('food-category/'. $subcat->slug) }}">{{ $subcat->name }}</a></li>
+                        @endforeach
                     </ul>
                 </div>
 
@@ -188,8 +80,8 @@
                         <h6><a href="#">{{ $product->name }}</a></h6>
                         <h5>Rp. {{ $product->price }}</h5>
                     </div>
-                    <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
-                            Produk</button></center>
+                    {{-- <center><button type="button" class="btn primary-btn" data-toggle="modal" data-target="#">Detail
+                            Produk</button></center> --}}
                 </div>
             </div>
             @endforeach

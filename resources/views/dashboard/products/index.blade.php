@@ -13,6 +13,18 @@
 
     <div class="container">
         <a href="{{ route('products.create') }}" class="btn btn-primary mb-3">Add Product</a>
+       
+        <div>
+            <ul>
+                @foreach ($subcategories as $subcat)
+               <li>
+                    <a href="{{ url('view-category/'. $subcat->slug) }}">
+                    <h5> {{ $subcat->name }} </h5>
+                    </a>
+               </li>
+               @endforeach
+            </ul>
+        </div>
         <div class="row">
             @foreach ($products as $product)
             <div class="col-md-4 mb-3">
